@@ -26,6 +26,8 @@ def main(wf):
 
     query = wf.args[0].split(' ')
 
+
+
     sys.stderr.write('in : '+ '\n')
     
     level = '';
@@ -84,7 +86,6 @@ def main(wf):
                     subtitle='',
                     valid=True,
                     arg=wf.args[0] + " " + post['value'],
-                    #arg='https://browall.duckdns.org:8123/api/services/automation/trigger?api_password=DrumNBass1111',
                     icon=v_icon)
 
         # Send the results to Alfred as XML

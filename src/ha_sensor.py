@@ -62,13 +62,6 @@ def main(wf):
         wf.send_feedback()
         return 0
 
-    if wf.update_available:
-        # Add a notification to top of Script Filter results
-        wf.add_item('New version available',
-                    'Action this item to install the update',
-                    autocomplete='workflow:update',
-                    icon=ICON_INFO)
-
     # Loop through the returned posts and add an item for each to
     # the list of results for Alfred
     #for post in posts:
@@ -90,11 +83,6 @@ def main(wf):
     return 0;
 
 if __name__ == '__main__':
-    wf = Workflow(update_settings={
-                # Your username and the workflow's repo's name
-                'github_slug': 'Skakiz/Alfred-Home-assistant-workflow',
-                # Optional number of days between checks for updates
-                'frequency': 7
-                })
+    wf = Workflow()
     log = wf.logger
     sys.exit(wf.run(main))
